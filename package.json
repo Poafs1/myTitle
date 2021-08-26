@@ -1,0 +1,40 @@
+{
+  "name": "my-title",
+  "version": "1.0.0",
+  "description": "MyTitle package is develop for practicing NPM React library",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "format": "prettier --write \"src/**/*.tsx\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "yarn run build",
+    "prepublishOnly": "yarn run lint",
+    "preversion": "yarn run lint",
+    "version": "yarn run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": "https://github.com/Poafs1/myTitle.git",
+  "author": "Poafs1 <poafs1@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.3.5",
+    "@types/jest": "^27.0.1",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.5",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
