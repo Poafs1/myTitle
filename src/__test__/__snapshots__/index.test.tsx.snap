@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Say hello to me Should return hello sentence include my name 1`] = `
+<div>
+  <p>
+    Hey 
+    Poafs1
+    , say hello to TypeScript.
+  </p>
+</div>
+`;
